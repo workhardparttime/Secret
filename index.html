@@ -58,13 +58,22 @@
         <p>Click the button below to proceed.</p>
 
         <!-- Redirect Button -->
-        <button class="redirect-button" onclick="startCountdown()">🚀 Proceed</button>
+        <button class="redirect-button" onclick="handleFirstClick()">🚀 Proceed</button>
 
         <!-- Countdown Timer -->
         <p class="countdown" id="countdown">Redirecting in <span id="timer">30</span> seconds...</p>
     </div>
 
     <script>
+        let hasClicked = false;
+
+        function handleFirstClick() {
+            if (!hasClicked) {
+                hasClicked = true;
+                setTimeout(startCountdown, 3000); // 3 सेकंड के बाद काउंटडाउन स्टार्ट होगा
+            }
+        }
+
         function startCountdown() {
             document.querySelector(".redirect-button").style.display = "none";
             document.getElementById("countdown").style.display = "block";
