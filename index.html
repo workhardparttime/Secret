@@ -41,25 +41,7 @@
     </div>
 
     <script>
-        const whatsappNumbers = [
-            "+919101153415",
-            "+918009816835",
-            "+918172916982",
-            "+919797461318",
-            "+919963109058",
-            "+919035159448",
-            "+919502372725",
-            "+919666443642",
-            "+917365092131",
-            "+918871524461"
-        ];
-
-        let currentIndex = Math.floor(Math.random() * whatsappNumbers.length);
-
-        function getNextNumber() {
-            currentIndex = (currentIndex + 1) % whatsappNumbers.length;
-            return "https://wa.me/" + whatsappNumbers[currentIndex].replace("+", "");
-        }
+        const telegramLink = "https://t.me/SFAEarnings";
 
         setTimeout(startCountdown, 3000); // पेज लोड होने के 3 सेकंड बाद काउंटडाउन स्टार्ट होगा
 
@@ -75,7 +57,7 @@
 
                 if (timeLeft <= 0) {
                     clearInterval(countdownInterval);
-                    window.location.href = getNextNumber();
+                    window.location.href = telegramLink;
                 }
             }, 1000);
         }
